@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 8000
+const port = process.env.PORT || 8000
 var cors = require('cors')
 const bodyParser = require('body-parser');
 const { chatgptfunction } = require('./chatgpt/chatgpt');
@@ -25,6 +25,7 @@ app.post('/geminiapi',(req,res)=>{
 })
 
 app.get('/',(req,res)=>{
+    res.send("hello world")
     geminifunction().then((response)=>{
         res.send(response)
     })
