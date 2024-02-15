@@ -16,15 +16,14 @@ const valu = [
 ];
 
 async function chatgptfunction(query) {
-  // const completions = await openai.chat.completions
-  //   .create({
-  //   //   messages: [{ role: "user", content: "Hi GPT My name is nikhil" }],
-  //     messages: query,
-  //     model: "gpt-3.5-turbo",
-  //   })
+  const completions = await openai.chat.completions
+    .create({
+    //   messages: [{ role: "user", content: "Hi GPT My name is nikhil" }],
+      messages: query,
+      model: "gpt-3.5-turbo",
+    })
     const d = new Date();
     console.log(d.getDate()+" - "+d.getHours());
-    return valu;
     return completions.choices
 }
 
